@@ -12,10 +12,10 @@ public class ReviewBO {
 	@Autowired
 	private ReviewMapper reviewMapper;
 
-	// input: X
+	// input: int
 	// output: Review
-	public Review getReview() {
-		return reviewMapper.selectReview();
+	public Review getReviewById(int id) {
+		return reviewMapper.selectReviewById(id);
 	}
 }
 

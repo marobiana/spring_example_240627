@@ -3,7 +3,7 @@
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.lesson03.mapper.ReviewMapper">
-	<select id="selectReview" resultType="com.example.lesson03.domain.Review">
+	<select id="selectReviewById" parameterType="int" resultType="com.example.lesson03.domain.Review">
 		SELECT
 			`id`
 			,`storeId`
@@ -16,6 +16,7 @@
 		FROM
 			`new_review`
 		WHERE
-			`id` = 5
+			`id` = #{id}
 	</select>
+	
 </mapper>
