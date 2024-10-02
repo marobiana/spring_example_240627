@@ -73,6 +73,14 @@
 		WHERE
 			`id` = #{id}
 	</update>
+	
+	<delete id="deleteReviewById" parameterType="int">
+		DELETE
+		FROM
+			`new_review`
+		WHERE
+			`id` = #{id}
+	</delete>
 </mapper>
 
 
