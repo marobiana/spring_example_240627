@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>최신 가입자</title>
+<title th:text="${title}">최신 가입자</title>
 	<!-- bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
@@ -10,8 +10,38 @@
 </head>
 <body>
 	<div class="container">
-		<h1>최신 가입자</h1>
+		<h1 th:text="${title}">최신 가입자</h1>
 		
+		<table class="table table-striped">
+			<tr>
+				<th>번호</th>
+				<td th:text="${result.id}"></td>
+			</tr>
+			<tr>
+				<th>이름</th>
+				<td th:text="${result.name}"></td>
+			</tr>
+			<tr>
+				<th>생년월일</th>
+				<td th:text="${result.yyyymmdd}"></td>
+			</tr>
+			<tr>
+				<th>이메일</th>
+				<td th:text="${result.email}"></td>
+			</tr>
+			<tr>
+				<th>자기소개</th>
+				<td th:text="${result.introduce}"></td>
+			</tr>
+			<tr>
+				<th>생성일</th>
+				<td th:text="${result.createdAt}"></td>
+			</tr>
+			<tr>
+				<th>수정일</th>
+				<td th:text="${result.updatedAt}"></td>
+			</tr>
+		</table>
 	</div>
 </body>
 </html>
