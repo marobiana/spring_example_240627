@@ -11,6 +11,37 @@
 <body>
 	<div class="container">
 		<h1>방금 가입된 학생</h1>
+		
+		<table class="table">
+			<tr>
+				<th>번호</th>
+				<td th:text="${student.id}"></td>
+			</tr>
+			<tr>
+				<th>이름</th>
+				<td th:text="${student.name}"></td>
+			</tr>
+			<tr>
+				<th>폰번호</th>
+				<td th:text="${student.phoneNumber}"></td>
+			</tr>
+			<tr>
+				<th>이메일</th>
+				<td th:text="${student.email}"></td>
+			</tr>
+			<tr>
+				<th>장래희망</th>
+				<td th:text="${student.dreamJob}"></td>
+			</tr>
+			<tr>
+				<th>생성일</th>
+				<td th:text="${student.createdAt}"></td>
+			</tr>
+			<tr>
+				<th>수정일</th>
+				<td th:text="${student.updatedAt}"></td>
+			</tr>
+		</table>
 	</div>
 </body>
 </html>

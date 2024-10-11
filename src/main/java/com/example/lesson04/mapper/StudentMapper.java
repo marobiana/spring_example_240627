@@ -10,6 +10,10 @@ public interface StudentMapper {
 	// input: Student
 	// output: int or void
 	public void insertStudent(Student student);
+	
+	// input: id
+	// output: Student
+	public Student selectStudentById(int id);
 }
 
 

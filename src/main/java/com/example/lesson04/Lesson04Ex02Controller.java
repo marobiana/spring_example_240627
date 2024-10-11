@@ -35,10 +35,10 @@ public class Lesson04Ex02Controller {
 		studentBO.addStudent(student);
 		
 		// DB Select
-		int id = student.getId();
-		
+		Student latestStudent = studentBO.selectStudentById(student.getId());
 		
 		// Model에 최근 학생을 담는다.
+		model.addAttribute("student", latestStudent);
 		
 		return "lesson04/afterAddStudent"; // view 경로
 	}
