@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>타임리프 예제2</title>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+</head>
+<body>
+	<h1>반복문(each)</h1>
+	
+	<h2>1. 숫자 반복문</h2>
+	<!-- 0 ~ 5 => 6번  -->
+	<div th:each="value : ${#numbers.sequence(0, 5)}">
+		[[${value}]]
+	</div>
+	<hr>
+	
+	<!-- 16 ~ 20 => 5번 -->
+	<div th:each="value, status : ${#numbers.sequence(16, 20)}">
+		<span th:text="${value}"></span>
+		<span th:text="'status:' + ${status}"></span>
+		<span th:text="|count: ${status.count}|"></span>
+		<span th:text="|index: ${status.index}|"></span>
+		<span th:text="|first: ${status.first}|"></span>
+		<span th:text="|last: ${status.last}|"></span>
+	</div>
+	
+	<h2>2. List-String 반복문</h2>
+	<div th:each="fruit, status : ${fruits}">
+		<span th:text="${fruit}"></span>
+		<span th:text="${status.index}"></span>
+		<span th:text="${status.count}"></span>
+	</div>
+	
+	<h3>3. List-Map 반복문</h3>
+	<table class="table text-center">
+		<thead>
+			<tr>
+				<th>번호</th>
+				<th>이름</th>
+				<th>나이</th>
+				<th>취미</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="user, status : ${users}">
+				<td th:text="${status.count}">번호</td>
+				<td th:text="${user.name}">이름</td>
+				<td th:text="${user.age}">나이</td>
+				<td th:text="${user.hobby}">취미</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
+
+
+
+
