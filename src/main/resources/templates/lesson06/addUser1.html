@@ -87,7 +87,7 @@
 					return;
 				}
 				
-				//let introduce = $("#introduce").val();
+				let introduce = $("#introduce").val();
 				
 				// 파라미터 검증
 				console.log(name);
@@ -105,7 +105,13 @@
 					// response
 					// callback 함수
 					, success:function(data) { // data 파라미터: 응답값(String)
-						
+						if (data == "성공") {
+							// 가입 완료 화면으로 이동
+							location.href = "/lesson06/ex01/after-add-user-view";
+						}
+					}
+					, error:function(xhr, status, error) {
+						alert("회원가입에 실패했습니다.");
 					}
 				});
 			});
