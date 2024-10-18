@@ -39,7 +39,7 @@
 		LIMIT 1
 	</select>
 	
-	<select id="" parameterType="string" resultType="">
+	<select id="isDuplicatedName" parameterType="string" resultType="boolean">
 		SELECT
 			COUNT(*)
 		FROM

@@ -62,6 +62,20 @@
 					}
 				});
 			});
+			
+			// 회원가입 - 중복확인 마쳤는지 validation
+			$("#joinBtn").on('click', function() {
+				//alert("가입");
+				
+				// nameStatusArea에 자식 요소가 없으면 가입 진행
+				console.log($("#nameStatusArea").children().length);
+				if ($("#nameStatusArea").children().length > 0) {
+					alert("회원가입 불가");
+					return;
+				}
+				
+				alert("회원가입 진행");
+			});
 		});
 	</script>
 </body>
