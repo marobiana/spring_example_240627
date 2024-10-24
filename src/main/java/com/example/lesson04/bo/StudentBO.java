@@ -43,6 +43,26 @@ public class StudentBO {
 	public Student selectStudentById(int id) {
 		return studentMapper.selectStudentById(id);
 	}
+	
+	// jpa
+	public StudentEntity updateStudentDreamJobById(int id, String dreamJob) {
+		// 기존 데이터 조회 - id로 entity
+		StudentEntity student = studentRepository.findById(id).orElse(null);
+		
+		// update -> save() - insert, update(pk가 있을 때)
+		if (student != null) {
+			// 조회된 데이터 있을 때 업데이트 진행
+			
+			// 변경할 내용을 엔티티에 세팅 후 save(id가 있어서) update
+			student = student.toBuilder()
+				.dreamJob(dreamJob)
+				.build();
+			
+			studentRepository.save(student);
+		}
+		
+		return student;
+	}
 }
 
 

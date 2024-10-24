@@ -26,6 +26,13 @@ public class Lesson07Ex01RestController {
 		// save 된 객체를 리턴하므로 id가 채워져있다.
 		return studentBO.addStudent(name, phoneNumber, email, dreamJob);
 	}
+	
+	// U:update
+	@GetMapping("/update")
+	public StudentEntity update() {
+		// id가 5인 dreamJob을 디자이너로 변경
+		return studentBO.updateStudentDreamJobById(5, "디자이너");
+	}
 }
 
 
